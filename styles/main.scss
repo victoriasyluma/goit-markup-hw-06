@@ -194,7 +194,7 @@ header.main-header {
   height: 50px;
   border: 1px solid transparent;
   transition-property: background-color, box-shadow;
-  transition: ease-in 250s;
+  transition: ease-in 250ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 
   &:hover,
@@ -752,6 +752,10 @@ footer .logo {
   border-radius: 4px;
 }
 
+.icon-close {
+  fill: rgba(0, 0, 0, 1);
+}
+
 .modal__button {
   margin: 0;
   padding: 0;
@@ -762,11 +766,19 @@ footer .logo {
   right: 0;
   margin-top: 8px;
   margin-right: 8px;
-}
+  cursor: pointer;
 
-.modal__button:hover + .icon-close,
-.modal__button:focus + .icon-close {
-  fill: rgba(33, 150, 243, 1);
+  svg {
+    border: 1px solid rgba(33, 33, 33, 0.2);
+    border-radius: 50%;
+  }
+
+  &:hover,
+  &:focus {
+    svg.icon-close {
+      fill: rgba(33, 150, 243, 1);
+    }
+  }
 }
 
 .text-overlay {
@@ -841,7 +853,7 @@ footer .logo {
   border-radius: 4px;
   border: 1px solid transparent;
   transition-property: background-color, box-shadow;
-  transition: ease-in 250s;
+  transition: ease-in 250ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 
   &:hover,
@@ -876,6 +888,14 @@ footer .logo {
   width: 358px;
   height: 50px;
   padding-left: 16px;
+  transition: ease-in 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  outline: none;
+
+  &:hover,
+  &:focus {
+    border: 1px solid rgba(33, 150, 243, 1);
+  }
 }
 
 .footer-container {
@@ -928,6 +948,12 @@ footer .logo {
   padding-top: 12px;
   padding-left: 30px;
   padding-right: 5px;
+  cursor: pointer;
+  transition-property: border;
+  transition: ease-in 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  outline: none;
+
   &:hover,
   &:focus {
     border: 1px solid rgba(33, 150, 243, 1);
@@ -935,7 +961,7 @@ footer .logo {
 }
 
 .modal-input:hover + .modal-icon,
-.modsl-input:focus + .modal-icon {
+.modal-input:focus + .modal-icon {
   fill: rgba(33, 150, 243, 1);
 }
 
@@ -944,6 +970,14 @@ footer .logo {
   border-radius: 4px;
   height: 120px;
   padding: 12px 16px;
+  outline: none;
+  transition-property: border;
+  transition: ease-in 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  &:hover,
+  &:focus {
+    border: 1px solid rgba(33, 150, 243, 1);
+  }
 }
 
 .modal-form-button {
@@ -953,6 +987,7 @@ footer .logo {
   align-items: center;
   justify-content: center;
   text-align: center;
+  margin: 0 auto;
   background-color: var(--text-link-color);
   color: var(--text-white-color);
   font-weight: 700;
@@ -961,7 +996,7 @@ footer .logo {
   border-radius: 4px;
   border: 1px solid transparent;
   transition-property: background-color, box-shadow;
-  transition: ease-in 250s;
+  transition: ease-in 250ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 
   &:hover,
@@ -977,5 +1012,55 @@ footer .logo {
     position: absolute;
     top: 33px;
     left: 12px;
+  }
+}
+
+.modal-label-checkbox {
+  display: flex;
+  align-items: center;
+  margin-top: 20px;
+  margin-bottom: 30px;
+  text-align: center;
+  padding-left: 15px;
+  padding-right: 15px;
+  gap: 10px;
+}
+
+.modal-checkbox {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: none;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+}
+
+.checkbox-custom {
+  height: 16px;
+  width: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid #212121;
+  border-radius: 2px;
+}
+
+.modal-checkbox:checked + .checkbox-custom {
+  background-color: #2196f3;
+  // transition-property: background-color, border;
+  // transition: ease-in 250ms;
+  // transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  border: none;
+}
+
+.modal-comment-link {
+  font-family: var(--main-font-family);
+  font-size: 14px;
+  line-height: calc(24 / 14);
+  color: var(--text-grey-color);
+  a {
+    color: var(--text-link-color);
   }
 }
